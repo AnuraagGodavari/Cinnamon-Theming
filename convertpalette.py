@@ -23,7 +23,6 @@ def convertpalette(infile, outfile = None, mode = None):
 		oldcss = f.read()
 	
 	for color in palette.keys():
-		print(f"\"{color}\", {palette[color]}")
 		oldcss = oldcss.replace(color, palette[color])
 
 	with open(outfile, 'w') as f:

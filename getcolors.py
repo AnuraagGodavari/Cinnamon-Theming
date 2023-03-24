@@ -16,7 +16,7 @@ def getcolors(infile, outfile = None, mode = None):
 	with open(infile) as f:
 		css = f.read()
 
-	patterns = set([''.join(matches) for matches in re.findall("(rgba?\(.*\))|(#[1234567890abcdefABCDEF]{6})", css)])
+	patterns = set([''.join(matches) for matches in re.findall("(rgba?\([\s1234567890\.,]*\))|(#[1234567890abcdefABCDEF]{6})", css)])
 	
 	if (convert_func): patterns = [convert_func(color) for color in patterns]
 
